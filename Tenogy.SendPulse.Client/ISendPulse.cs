@@ -22,11 +22,13 @@ namespace SendPulse
 		/// <returns></returns>
 		Dictionary<string, object> getBookInfo(int id);
 		/// <summary>
-		/// Get list pf emails from book
+		/// Get list pf emails from book.
 		/// </summary>
-		/// <param name="id"></param>
+		/// <param name="id">Book id.</param>
+		/// <param name="limit">Emails limit. Max value - 100. Not totally testted.</param>
+		/// <param name="offset">Emails offset to take.</param>
 		/// <returns></returns>
-		Dictionary<string, object> getEmailsFromBook(int id);
+		Dictionary<string, object> getEmailsFromBook(int id, int limit = 100, int offset = 0);
 		/// <summary>
 		/// Remove address book
 		/// </summary>
