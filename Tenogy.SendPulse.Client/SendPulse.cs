@@ -262,13 +262,21 @@ namespace SendPulse
 		/// </summary>
 		/// <param name="id"></param>
 		/// <returns></returns>
-		public Dictionary<string, object> getEmailsFromBook(int id)
+		public Dictionary<string, object> getEmailsFromBook(int id, int limit = 100, int offset = 0)
 		{
 			if (id <= 0) return this.handleError("Empty book id");
 			Dictionary<string, object> result = null;
 			try
 			{
-				result = this.sendRequest("addressbooks/" + id + "/emails", "GET", null);
+				result = this.sendRequest(
+					"addressbooks/" + id + "/emails",
+					"GET",
+					new Dictionary<string, object>
+					{
+						{ "limit", limit },
+						{ "offset", offset }
+					}
+					);
 			}
 			catch (IOException) { }
 			return this.handleResult(result);

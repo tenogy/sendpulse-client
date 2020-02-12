@@ -5,6 +5,7 @@
     <Company>Tenogy</Company>
     <Authors>Tenogy</Authors>
     <Description>Tenogy.SendPulse.Client</Description>
+    <Version>1.0.1</Version>
   </PropertyGroup>
 
   <ItemGroup>
